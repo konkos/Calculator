@@ -196,29 +196,31 @@ public class MainActivity extends AppCompatActivity {
                 num1 = Double.parseDouble(op1Field.getText().toString());
                 num2 = Double.parseDouble(op2Field.getText().toString());
 
-                if(operator.equals("+"))
-                {
-                    result = num1 + num2;
-                    op1Field.setText(""+result);
-                }
-                else if(operator.equals("-"))
-                {
-                    result = num1 - num2;
-                    op1Field.setText(""+result);
-                }
-                else if(operator.equals("*"))
-                {
-                    result = num1 * num2;
-                    op1Field.setText(""+result);
-                }
-                else if(operator.equals("/"))
-                {
-                    if(!num2.equals(0))
-                        result = num1 / num2;
-                    op1Field.setText(""+result);
+                if(num1!=null && num2!=null){
+                    if(operator.equals("+"))
+                    {
+                        result = num1 + num2;
+                        op1Field.setText(result.toString());
                     }
-                else
-                    op1Field.setText("ERROR");
+                    else if(operator.equals("-"))
+                    {
+                        result = num1 - num2;
+                        op1Field.setText(result.toString());
+                    }
+                    else if(operator.equals("*"))
+                    {
+                        result = num1 * num2;
+                        op1Field.setText(result.toString());
+                    }
+                    else if(operator.equals("/"))
+                    {
+                        if(!num2.equals(0))
+                            result = num1 / num2;
+                        op1Field.setText(result.toString());
+                        }
+                    else
+                        op1Field.setText("ERROR");
+                }
 
 
                 op2Field.setText("");
